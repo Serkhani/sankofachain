@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { useUserProfileStore } from "~~/stores/userProfileStore";
 import { ENSRegistrationModal, ENSNameDisplay, ENSQuickRegister } from "~~/components/ens";
-import { Button } from "~~/components/ui/Button";
 import { User, Edit, Globe, Twitter, Instagram, Linkedin, ExternalLink } from "lucide-react";
+import { Button } from "~~/components/ui";
 
 export default function ProfilePage() {
   const { address, isConnected } = useAccount();

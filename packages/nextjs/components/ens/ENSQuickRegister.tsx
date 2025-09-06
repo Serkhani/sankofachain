@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { useAccount } from "wagmi";
 import { useENSRegistration, useENSAvailability } from "~~/hooks/ens";
-import { Button } from "~~/components/ui/Button";
 import { Plus, Check, XCircle, Loader2 } from "lucide-react";
+import { Button } from "../ui";
 
 interface ENSQuickRegisterProps {
   onSuccess?: (ensName: string) => void;

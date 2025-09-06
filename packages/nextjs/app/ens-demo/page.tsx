@@ -3,9 +3,8 @@
 import { useState } from "react";
 import { useAccount } from "wagmi";
 import { ENSRegistrationModal, ENSNameDisplay, ENSQuickRegister } from "~~/components/ens";
+import { Button, Card, CardContent } from "~~/components/ui";
 import { useENSRegistration, useENSAvailability } from "~~/hooks/ens";
-import { Button } from "~~/components/ui/Button";
-import { Card, CardContent } from "~~/components/ui/Card";
 
 export default function ENSDemoPage() {
   const { address, isConnected } = useAccount();

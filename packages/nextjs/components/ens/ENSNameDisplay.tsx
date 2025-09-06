@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { useENSResolution } from "~~/hooks/ens";
 import { Address, isAddress } from "viem";
+import { Button } from "../ui";
 import { Copy, Check, ExternalLink } from "lucide-react";
-import { Button } from "~~/components/ui/Button";
 
 interface ENSNameDisplayProps {
   address?: string;

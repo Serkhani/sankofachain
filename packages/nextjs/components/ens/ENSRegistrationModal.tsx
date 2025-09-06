@@ -4,8 +4,8 @@ import { useState, useEffect } from "react";
 import { useAccount } from "wagmi";
 import { useENSRegistration, useENSAvailability } from "~~/hooks/ens";
 import { TextRecord } from "~~/services/ensService";
-import { Button } from "~~/components/ui/Button";
 import { X, Check, XCircle, Loader2 } from "lucide-react";
+import { Button } from "../ui";
 
 interface ENSRegistrationModalProps {
   isOpen: boolean;
