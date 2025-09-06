@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useAccount } from "wagmi";
-import { ENSRegistrationModal, ENSNameDisplay, ENSQuickRegister } from "~~/components/ens";
+import { ENSNameDisplay, ENSQuickRegister, ENSRegistrationModal } from "~~/components/ens";
 import { Button, Card, CardContent } from "~~/components/ui";
-import { useENSRegistration, useENSAvailability } from "~~/hooks/ens";
+import { useENSAvailability, useENSRegistration } from "~~/hooks/ens";
 
 export default function ENSDemoPage() {
   const { address, isConnected } = useAccount();
@@ -30,12 +30,8 @@ export default function ENSDemoPage() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              ENS Demo
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">
-              Please connect your wallet to test ENS functionality
-            </p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">ENS Demo</h1>
+            <p className="text-gray-600 dark:text-gray-400">Please connect your wallet to test ENS functionality</p>
           </div>
         </div>
       </div>
@@ -46,12 +42,8 @@ export default function ENSDemoPage() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-            ENS Integration Demo
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400">
-            Test the SankofaChain ENS Registrar integration
-          </p>
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">ENS Integration Demo</h1>
+          <p className="text-gray-600 dark:text-gray-400">Test the SankofaChain ENS Registrar integration</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -59,12 +51,7 @@ export default function ENSDemoPage() {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-xl font-semibold mb-4">Your Address</h2>
-              <ENSNameDisplay
-                address={address}
-                showCopyButton={true}
-                showExternalLink={true}
-                className="text-lg"
-              />
+              <ENSNameDisplay address={address} showCopyButton={true} showExternalLink={true} className="text-lg" />
             </CardContent>
           </Card>
 
@@ -72,11 +59,7 @@ export default function ENSDemoPage() {
           <Card>
             <CardContent className="p-6">
               <h2 className="text-xl font-semibold mb-4">Quick Register</h2>
-              <ENSQuickRegister
-                onSuccess={(ensName) => {
-                  alert(`Successfully registered ${ensName}!`);
-                }}
-              />
+              <ENSQuickRegister onSuccess={ensName => alert(`Successfully registered ${ensName}!`)} />
             </CardContent>
           </Card>
 
@@ -86,14 +69,12 @@ export default function ENSDemoPage() {
               <h2 className="text-xl font-semibold mb-4">Test Registration</h2>
               <div className="space-y-4">
                 <div>
-                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                    ENS Label
-                  </label>
+                  <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">ENS Label</label>
                   <div className="flex items-center">
                     <input
                       type="text"
                       value={testLabel}
-                      onChange={(e) => setTestLabel(e.target.value.toLowerCase())}
+                      onChange={e => setTestLabel(e.target.value.toLowerCase())}
                       placeholder="alice"
                       className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                     />
@@ -141,11 +122,7 @@ export default function ENSDemoPage() {
               <p className="text-gray-600 dark:text-gray-400 mb-4">
                 Register with additional profile information and text records.
               </p>
-              <Button
-                onClick={() => setShowModal(true)}
-                className="w-full"
-                variant="outline"
-              >
+              <Button onClick={() => setShowModal(true)} className="w-full" variant="outline">
                 Open Registration Modal
               </Button>
             </CardContent>
@@ -182,7 +159,7 @@ export default function ENSDemoPage() {
         <ENSRegistrationModal
           isOpen={showModal}
           onClose={() => setShowModal(false)}
-          onSuccess={(ensName) => {
+          onSuccess={ensName => {
             alert(`Successfully registered ${ensName}!`);
             setShowModal(false);
           }}

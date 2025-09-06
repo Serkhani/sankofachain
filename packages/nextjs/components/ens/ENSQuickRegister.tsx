@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { useAccount } from "wagmi";
-import { useENSRegistration, useENSAvailability } from "~~/hooks/ens";
-import { Plus, Check, XCircle, Loader2 } from "lucide-react";
 import { Button } from "../ui";
+import { Check, Loader2, Plus, XCircle } from "lucide-react";
+import { useENSAvailability, useENSRegistration } from "~~/hooks/ens";
 
 interface ENSQuickRegisterProps {
   onSuccess?: (ensName: string) => void;
@@ -75,9 +75,7 @@ export const ENSQuickRegister = ({ onSuccess, className = "" }: ENSQuickRegister
   if (!address) {
     return (
       <div className={`text-center py-4 ${className}`}>
-        <p className="text-gray-500 dark:text-gray-400 text-sm">
-          Connect your wallet to register an ENS name
-        </p>
+        <p className="text-gray-500 dark:text-gray-400 text-sm">Connect your wallet to register an ENS name</p>
       </div>
     );
   }
@@ -85,11 +83,7 @@ export const ENSQuickRegister = ({ onSuccess, className = "" }: ENSQuickRegister
   return (
     <div className={`space-y-3 ${className}`}>
       {!isExpanded ? (
-        <Button
-          onClick={() => setIsExpanded(true)}
-          className="w-full"
-          variant="outline"
-        >
+        <Button onClick={() => setIsExpanded(true)} className="w-full" variant="outline">
           <Plus className="w-4 h-4 mr-2" />
           Register ENS Name
         </Button>
@@ -103,7 +97,7 @@ export const ENSQuickRegister = ({ onSuccess, className = "" }: ENSQuickRegister
               <input
                 type="text"
                 value={label}
-                onChange={(e) => setLabel(e.target.value.toLowerCase())}
+                onChange={e => setLabel(e.target.value.toLowerCase())}
                 placeholder="alice"
                 className="flex-1 px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-l-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white text-sm"
               />
@@ -132,12 +126,7 @@ export const ENSQuickRegister = ({ onSuccess, className = "" }: ENSQuickRegister
             >
               Cancel
             </Button>
-            <Button
-              onClick={handleRegister}
-              disabled={!canRegister}
-              className="flex-1"
-              size="sm"
-            >
+            <Button onClick={handleRegister} disabled={!canRegister} className="flex-1" size="sm">
               {isRegistering ? (
                 <>
                   <Loader2 className="w-3 h-3 animate-spin mr-1" />

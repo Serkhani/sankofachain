@@ -1,24 +1,16 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { useUserProfileStore } from "~~/stores/userProfileStore";
-import { ENSRegistrationModal, ENSNameDisplay, ENSQuickRegister } from "~~/components/ens";
 import { User, Edit, Globe, Twitter, Instagram, Linkedin, ExternalLink } from "lucide-react";
 import { Button } from "~~/components/ui";
+import { useUserProfileStore } from "~~/stores/userProfileStore";
+import { ENSNameDisplay, ENSQuickRegister, ENSRegistrationModal } from "~~/components/ens";
 
 export default function ProfilePage() {
   const { address, isConnected } = useAccount();
-  const {
-    currentProfile,
-    loadProfile,
-    createProfile,
-    updateProfile,
-    isLoading,
-    error,
-    isProfileComplete,
-    hasENSName,
-  } = useUserProfileStore();
+  const { currentProfile, loadProfile, createProfile, updateProfile, isLoading, error, hasENSName } =
+    useUserProfileStore();
 
   const [isEditing, setIsEditing] = useState(false);
   const [showENSModal, setShowENSModal] = useState(false);
@@ -85,12 +77,8 @@ export default function ProfilePage() {
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900 py-12">
         <div className="max-w-4xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">
-              Profile
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400">
-              Please connect your wallet to view your profile
-            </p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Profile</h1>
+            <p className="text-gray-600 dark:text-gray-400">Please connect your wallet to view your profile</p>
           </div>
         </div>
       </div>
@@ -122,9 +110,7 @@ export default function ProfilePage() {
                   <User className="w-10 h-10 text-white" />
                 </div>
                 <div>
-                  <h1 className="text-2xl font-bold text-white">
-                    {currentProfile?.name || "Your Profile"}
-                  </h1>
+                  <h1 className="text-2xl font-bold text-white">{currentProfile?.name || "Your Profile"}</h1>
                   <div className="flex items-center space-x-2 mt-1">
                     <ENSNameDisplay
                       address={address}
@@ -167,36 +153,28 @@ export default function ProfilePage() {
             {!currentProfile ? (
               <div className="text-center py-12">
                 <User className="w-16 h-16 text-gray-400 mx-auto mb-4" />
-                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Create Your Profile
-                </h2>
+                <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Create Your Profile</h2>
                 <p className="text-gray-600 dark:text-gray-400 mb-6">
                   Set up your profile to get started on SankofaChain
                 </p>
                 <div className="space-y-4">
                   <ENSQuickRegister onSuccess={handleENSRegistration} />
-                  <Button onClick={() => setIsEditing(true)}>
-                    Create Profile
-                  </Button>
+                  <Button onClick={() => setIsEditing(true)}>Create Profile</Button>
                 </div>
               </div>
             ) : (
               <div className="space-y-6">
                 {/* Basic Info */}
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Basic Information
-                  </h2>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Basic Information</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                        Name
-                      </label>
+                      <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
                       {isEditing ? (
                         <input
                           type="text"
                           value={formData.name}
-                          onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))}
+                          onChange={e => setFormData(prev => ({ ...prev, name: e.target.value }))}
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                         />
                       ) : (
@@ -208,20 +186,16 @@ export default function ProfilePage() {
                         ENS Name
                       </label>
                       <ENSNameDisplay
-                        address={address}
-                        ensName={currentProfile.ensName}
-                        showCopyButton={true}
+                      address={address} ensName={currentProfile.ensName} showCopyButton={true}
                       />
                     </div>
                   </div>
                   <div className="mt-4">
-                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                      Bio
-                    </label>
+                    <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Bio</label>
                     {isEditing ? (
                       <textarea
                         value={formData.bio}
-                        onChange={(e) => setFormData(prev => ({ ...prev, bio: e.target.value }))}
+                        onChange={e => setFormData(prev => ({ ...prev, bio: e.target.value }))}
                         rows={3}
                         className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                       />
@@ -233,9 +207,7 @@ export default function ProfilePage() {
 
                 {/* Social Links */}
                 <div>
-                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                    Social Links
-                  </h2>
+                  <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">Social Links</h2>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -246,7 +218,7 @@ export default function ProfilePage() {
                         <input
                           type="url"
                           value={formData.website}
-                          onChange={(e) => setFormData(prev => ({ ...prev, website: e.target.value }))}
+                          onChange={e => setFormData(prev => ({ ...prev, website: e.target.value }))}
                           placeholder="https://yourwebsite.com"
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                         />
@@ -277,7 +249,7 @@ export default function ProfilePage() {
                         <input
                           type="text"
                           value={formData.twitter}
-                          onChange={(e) => setFormData(prev => ({ ...prev, twitter: e.target.value }))}
+                          onChange={e => setFormData(prev => ({ ...prev, twitter: e.target.value }))}
                           placeholder="@username"
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                         />
@@ -296,7 +268,7 @@ export default function ProfilePage() {
                         <input
                           type="text"
                           value={formData.instagram}
-                          onChange={(e) => setFormData(prev => ({ ...prev, instagram: e.target.value }))}
+                          onChange={e => setFormData(prev => ({ ...prev, instagram: e.target.value }))}
                           placeholder="@username"
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                         />
@@ -315,7 +287,7 @@ export default function ProfilePage() {
                         <input
                           type="text"
                           value={formData.linkedin}
-                          onChange={(e) => setFormData(prev => ({ ...prev, linkedin: e.target.value }))}
+                          onChange={e => setFormData(prev => ({ ...prev, linkedin: e.target.value }))}
                           placeholder="username"
                           className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
                         />
@@ -331,13 +303,11 @@ export default function ProfilePage() {
                 {/* ENS Management */}
                 {hasENSName() && (
                   <div>
-                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
-                      ENS Management
-                    </h2>
+                    <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">ENS Management</h2>
                     <div className="bg-blue-50 dark:bg-blue-900/20 p-4 rounded-lg">
                       <p className="text-blue-700 dark:text-blue-200 text-sm">
-                        Your ENS name is registered and active. You can update your profile information
-                        and it will be reflected in your ENS text records.
+                        Your ENS name is registered and active. You can update your profile information and it will be
+                        reflected in your ENS text records.
                       </p>
                     </div>
                   </div>
@@ -346,16 +316,10 @@ export default function ProfilePage() {
                 {/* Save Button */}
                 {isEditing && (
                   <div className="flex justify-end space-x-3 pt-6 border-t border-gray-200 dark:border-gray-700">
-                    <Button
-                      variant="outline"
-                      onClick={() => setIsEditing(false)}
-                    >
+                    <Button variant="outline" onClick={() => setIsEditing(false)}>
                       Cancel
                     </Button>
-                    <Button
-                      onClick={handleSave}
-                      disabled={!formData.name.trim()}
-                    >
+                    <Button onClick={handleSave} disabled={!formData.name.trim()}>
                       Save Changes
                     </Button>
                   </div>

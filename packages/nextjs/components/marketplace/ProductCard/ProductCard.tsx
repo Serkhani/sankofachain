@@ -13,12 +13,12 @@ import {
 } from "@heroicons/react/24/outline";
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import { useToast } from "~~/components/Toast";
-import { Card, CardContent } from "~~/components/ui";
 import { ENSNameDisplay } from "~~/components/ens";
+import { Card, CardContent } from "~~/components/ui";
 import { useCartStore } from "~~/stores/cartStore";
 import { useComparisonStore } from "~~/stores/comparisonStore";
-import { useQuickViewStore } from "~~/stores/quickViewStore";
 import { useCreatorStore } from "~~/stores/creatorStore";
+import { useQuickViewStore } from "~~/stores/quickViewStore";
 import { Product } from "~~/types/marketplace";
 
 interface ProductCardProps {
@@ -41,7 +41,7 @@ export const ProductCard = ({
   const { addToCart } = useCartStore();
   const { openQuickView } = useQuickViewStore();
   const { addToComparison, isProductInComparison } = useComparisonStore();
-  const { getCreatorENSName } = useCreatorStore();
+  const {} = useCreatorStore();
   const { addToast } = useToast();
 
   const handleLike = async (e: React.MouseEvent) => {
@@ -142,7 +142,6 @@ export const ProductCard = ({
                     </div>
                     <div className="flex items-center gap-1">
                       <ENSNameDisplay
-                        address={product.creator.address}
                         ensName={product.creator.ensName}
                         fallback={product.creator.name}
                         className="text-sm text-base-content/70 font-medium"
@@ -374,7 +373,6 @@ export const ProductCard = ({
               </div>
               <div className="flex items-center gap-1">
                 <ENSNameDisplay
-                  address={product.creator.address}
                   ensName={product.creator.ensName}
                   fallback={product.creator.name}
                   className="text-sm text-base-content/70 font-medium"

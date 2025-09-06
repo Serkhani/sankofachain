@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import { useENSResolution } from "~~/hooks/ens";
-import { Address, isAddress } from "viem";
+import { isAddress } from "viem";
 import { Button } from "../ui";
-import { Copy, Check, ExternalLink } from "lucide-react";
+import { Check, Copy, ExternalLink } from "lucide-react";
+import { useENSResolution } from "~~/hooks/ens";
 
 interface ENSNameDisplayProps {
   address?: string;
@@ -34,7 +34,7 @@ export const ENSNameDisplay = ({
   const [displayAddress, setDisplayAddress] = useState<string>("");
   const [isLoading, setIsLoading] = useState(false);
 
-  const { getENSName, resolution } = useENSResolution();
+  const { getENSName } = useENSResolution();
 
   const targetAddress = address || connectedAddress;
 
@@ -98,7 +98,7 @@ export const ENSNameDisplay = ({
     return `${text.slice(0, maxLen - 3)}...`;
   };
 
-  const isENS = displayName.includes('.') && displayName.includes('eth');
+  const isENS = displayName.includes(".") && displayName.includes("eth");
 
   if (isLoading) {
     return (
@@ -119,7 +119,9 @@ export const ENSNameDisplay = ({
       
       <div className="flex flex-col">
         <div className="flex items-center space-x-2">
-          <span className={`font-medium ${isENS ? 'text-blue-600 dark:text-blue-400' : 'text-gray-900 dark:text-white'}`}>
+          <span
+            className={`font-medium ${isENS ? "text-blue-600 dark:text-blue-400" : "text-gray-900 dark:text-white"}`}
+          >
             {truncateText(displayName, maxLength)}
           </span>
           
@@ -139,27 +141,13 @@ export const ENSNameDisplay = ({
 
       <div className="flex items-center space-x-1">
         {showCopyButton && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleCopy}
-            className="p-1 h-6 w-6"
-          >
-            {copied ? (
-              <Check className="w-3 h-3 text-green-600" />
-            ) : (
-              <Copy className="w-3 h-3" />
-            )}
+          <Button variant="ghost" size="sm" onClick={handleCopy} className="p-1 h-6 w-6">
+            {copied ? <Check className="w-3 h-3 text-green-600" /> : <Copy className="w-3 h-3" />}
           </Button>
         )}
         
         {showExternalLink && displayAddress && (
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={handleExternalLink}
-            className="p-1 h-6 w-6"
-          >
+          <Button variant="ghost" size="sm" onClick={handleExternalLink} className="p-1 h-6 w-6">
             <ExternalLink className="w-3 h-3" />
           </Button>
         )}

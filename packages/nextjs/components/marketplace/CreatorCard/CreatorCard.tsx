@@ -5,8 +5,8 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { EyeIcon, MapPinIcon, ShieldCheckIcon, StarIcon } from "@heroicons/react/24/outline";
 import { ShieldCheckIcon as ShieldCheckSolidIcon } from "@heroicons/react/24/solid";
-import FollowButton from "~~/components/ui/FollowButton/FollowButton";
 import { ENSNameDisplay } from "~~/components/ens";
+import FollowButton from "~~/components/ui/FollowButton/FollowButton";
 import { formatNumber } from "~~/lib/utils";
 import { CreatorProfile } from "~~/types/marketplace";
 
