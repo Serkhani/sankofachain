@@ -61,5 +61,8 @@
   "packageManager": "yarn@3.2.3",
   "engines": {
     "node": ">=20.18.3"
+  },
+  "dependencies": {
+    "@types/node-fetch": "^2.6.13"
   }
 }

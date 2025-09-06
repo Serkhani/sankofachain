@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { NetworkOptions } from "./NetworkOptions";
 import { getAddress } from "viem";
 import { Address } from "viem";
@@ -16,6 +16,7 @@ import {
 import { BlockieAvatar, isENS } from "~~/components/scaffold-eth";
 import { useCopyToClipboard, useOutsideClick } from "~~/hooks/scaffold-eth";
 import { getTargetNetworks } from "~~/utils/scaffold-eth";
+import { useUserProfileStore } from "~~/stores/userProfileStore";
 
 const BURNER_WALLET_ID = "burnerWallet";
 
@@ -37,11 +38,22 @@ export const AddressInfoDropdown = ({
   const { disconnect } = useDisconnect();
   const { connector } = useAccount();
   const checkSumAddress = getAddress(address);
+  const { getENSName } = useUserProfileStore();
+  const [ensName, setEnsName] = useState<string | null>(null);
 
   const { copyToClipboard: copyAddressToClipboard, isCopiedToClipboard: isAddressCopiedToClipboard } =
     useCopyToClipboard();
   const [selectingNetwork, setSelectingNetwork] = useState(false);
   const dropdownRef = useRef<HTMLDetailsElement>(null);
+
+  // Load ENS name for the address
+  useEffect(() => {
+    const loadENSName = async () => {
+      const ens = getENSName(address);
+      setEnsName(ens);
+    };
+    loadENSName();
+  }, [address, getENSName]);
 
   const closeDropdown = () => {
     setSelectingNetwork(false);
@@ -56,7 +68,7 @@ export const AddressInfoDropdown = ({
         <summary className="btn btn-secondary btn-sm pl-0 pr-2 shadow-md dropdown-toggle gap-0 h-auto!">
           <BlockieAvatar address={checkSumAddress} size={30} ensImage={ensAvatar} />
           <span className="ml-2 mr-1">
-            {isENS(displayName) ? displayName : checkSumAddress?.slice(0, 6) + "..." + checkSumAddress?.slice(-4)}
+            {ensName || (isENS(displayName) ? displayName : checkSumAddress?.slice(0, 6) + "..." + checkSumAddress?.slice(-4))}
           </span>
           <ChevronDownIcon className="h-6 w-4 ml-2 sm:ml-0" />
         </summary>

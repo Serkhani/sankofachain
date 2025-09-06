@@ -14,9 +14,11 @@ import {
 import { HeartIcon as HeartSolidIcon } from "@heroicons/react/24/solid";
 import { useToast } from "~~/components/Toast";
 import { Card, CardContent } from "~~/components/ui";
+import { ENSNameDisplay } from "~~/components/ens";
 import { useCartStore } from "~~/stores/cartStore";
 import { useComparisonStore } from "~~/stores/comparisonStore";
 import { useQuickViewStore } from "~~/stores/quickViewStore";
+import { useCreatorStore } from "~~/stores/creatorStore";
 import { Product } from "~~/types/marketplace";
 
 interface ProductCardProps {
@@ -39,6 +41,7 @@ export const ProductCard = ({
   const { addToCart } = useCartStore();
   const { openQuickView } = useQuickViewStore();
   const { addToComparison, isProductInComparison } = useComparisonStore();
+  const { getCreatorENSName } = useCreatorStore();
   const { addToast } = useToast();
 
   const handleLike = async (e: React.MouseEvent) => {
@@ -138,7 +141,13 @@ export const ProductCard = ({
                       />
                     </div>
                     <div className="flex items-center gap-1">
-                      <span className="text-sm text-base-content/70 font-medium">{product.creator.name}</span>
+                      <ENSNameDisplay
+                        address={product.creator.address}
+                        ensName={product.creator.ensName}
+                        fallback={product.creator.name}
+                        className="text-sm text-base-content/70 font-medium"
+                        maxLength={15}
+                      />
                       {product.creator.verified && <ShieldCheckIcon className="w-4 h-4 text-blue-500" />}
                     </div>
                   </div>
@@ -364,7 +373,13 @@ export const ProductCard = ({
                 />
               </div>
               <div className="flex items-center gap-1">
-                <span className="text-sm text-base-content/70 font-medium">{product.creator.name}</span>
+                <ENSNameDisplay
+                  address={product.creator.address}
+                  ensName={product.creator.ensName}
+                  fallback={product.creator.name}
+                  className="text-sm text-base-content/70 font-medium"
+                  maxLength={15}
+                />
                 {product.creator.verified && <ShieldCheckIcon className="w-4 h-4 text-blue-500" />}
               </div>
             </div>

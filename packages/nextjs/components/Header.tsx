@@ -13,6 +13,7 @@ import {
   ShoppingCartIcon,
   TrophyIcon,
   UserGroupIcon,
+  UserIcon,
 } from "@heroicons/react/24/outline";
 import { FaucetButton, RainbowKitCustomConnectButton } from "~~/components/scaffold-eth";
 import { useOutsideClick, useTargetNetwork } from "~~/hooks/scaffold-eth";
@@ -30,6 +31,8 @@ export const menuLinks: HeaderMenuLink[] = [
   { label: "Marketplace", href: "/marketplace", icon: <ShoppingBagIcon className="h-4 w-4" /> },
   { label: "Creators", href: "/creators", icon: <UserGroupIcon className="h-4 w-4" /> },
   { label: "Brands", href: "/brands", icon: <TrophyIcon className="h-4 w-4" /> },
+  { label: "Profile", href: "/profile", icon: <UserIcon className="h-4 w-4" /> },
+  { label: "ENS Demo", href: "/ens-demo", icon: <ScaleIcon className="h-4 w-4" /> },
   // { label: "Debug Contracts", href: "/debug", icon: <BugAntIcon className="h-4 w-4" /> },
 ];
 

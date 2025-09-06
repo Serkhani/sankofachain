@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { EyeIcon, MapPinIcon, ShieldCheckIcon, StarIcon } from "@heroicons/react/24/outline";
 import { ShieldCheckIcon as ShieldCheckSolidIcon } from "@heroicons/react/24/solid";
 import FollowButton from "~~/components/ui/FollowButton/FollowButton";
+import { ENSNameDisplay } from "~~/components/ens";
 import { formatNumber } from "~~/lib/utils";
 import { CreatorProfile } from "~~/types/marketplace";
 
@@ -96,7 +97,13 @@ export const CreatorCard = ({ creator, variant = "default", showActions = true }
             <div className="flex-1 min-w-0">
               <h3 className={`font-bold ${variant === "featured" ? "text-xl" : "text-lg"} flex items-center gap-2`}>
                 <Link href={`/creator/${creator.id}`} className="hover:text-primary transition-colors truncate">
-                  {creator.name}
+                  <ENSNameDisplay
+                    address={creator.address}
+                    ensName={creator.ensName}
+                    fallback={creator.name}
+                    className="truncate"
+                    maxLength={20}
+                  />
                 </Link>
                 {creator.verified && <ShieldCheckIcon className="w-4 h-4 text-blue-500 flex-shrink-0" />}
               </h3>

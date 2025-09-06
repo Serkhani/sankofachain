@@ -8,6 +8,10 @@ interface CreatorState {
   creatorProducts: Record<string, Product[]>;
   followedCreators: string[];
 
+  // ENS-related state
+  ensNames: Record<string, string>; // address -> ensName mapping
+  ensAvailability: Record<string, boolean>; // label -> availability
+
   isLoading: boolean;
   error: string | null;
   searchQuery: string;
@@ -29,12 +33,18 @@ interface CreatorState {
   setFilterBy: (filters: Partial<CreatorState["filterBy"]>) => void;
   clearFilters: () => void;
 
+  // ENS-related actions
+  setENSName: (address: string, ensName: string) => void;
+  setENSAvailability: (label: string, available: boolean) => void;
+  updateCreatorENSName: (creatorId: string, ensName: string) => void;
+
   getFilteredCreators: () => CreatorProfile[];
   isFollowing: (creatorId: string) => boolean;
   getCreatorById: (id: string) => CreatorProfile | undefined;
   getCreatorProducts: (creatorId: string) => Product[];
   getFeaturedCreators: () => CreatorProfile[];
   getTopCreators: () => CreatorProfile[];
+  getCreatorENSName: (address: string) => string | null;
 }
 
 export const useCreatorStore = create<CreatorState>()(
@@ -45,6 +55,8 @@ export const useCreatorStore = create<CreatorState>()(
         selectedCreator: null,
         creatorProducts: {},
         followedCreators: [],
+        ensNames: {},
+        ensAvailability: {},
         isLoading: false,
         error: null,
         searchQuery: "",
@@ -222,6 +234,52 @@ export const useCreatorStore = create<CreatorState>()(
         getTopCreators: () => {
           const state = get();
           return [...state.creators].sort((a, b) => b.stats.followers - a.stats.followers).slice(0, 10);
+        },
+
+        // ENS-related methods
+        setENSName: (address: string, ensName: string) => {
+          set(
+            (state) => ({
+              ensNames: {
+                ...state.ensNames,
+                [address]: ensName,
+              },
+            }),
+            false,
+            "setENSName"
+          );
+        },
+
+        setENSAvailability: (label: string, available: boolean) => {
+          set(
+            (state) => ({
+              ensAvailability: {
+                ...state.ensAvailability,
+                [label]: available,
+              },
+            }),
+            false,
+            "setENSAvailability"
+          );
+        },
+
+        updateCreatorENSName: (creatorId: string, ensName: string) => {
+          set(
+            (state) => ({
+              creators: state.creators.map(creator =>
+                creator.id === creatorId
+                  ? { ...creator, ensName }
+                  : creator
+              ),
+            }),
+            false,
+            "updateCreatorENSName"
+          );
+        },
+
+        getCreatorENSName: (address: string) => {
+          const state = get();
+          return state.ensNames[address] || null;
         },
       }),
       {

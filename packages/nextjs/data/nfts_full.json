@@ -1,0 +1,275 @@
+[
+  {
+    "name": "Authentic Kente Cloth Pattern #001",
+    "description": "Hand-woven traditional Kente cloth with authentic Asante patterns. Each thread tells a story of our rich cultural heritage. This piece represents wisdom, creativity, and strength.",
+    "image": "https://images.unsplash.com/photo-1660695828403-b42e117e0b4f?q=80&w=1170&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/1",
+    "price_amount": "0.25",
+    "price_currency": "",
+    "supply": "5",
+    "attributes": [
+      { "trait_type": "Category", "value": "textiles" },
+      { "trait_type": "Subcategory", "value": "kente-cloth" },
+      { "trait_type": "Creator", "value": "Akosua Mensah" },
+      { "trait_type": "Creator ENS", "value": "akosua.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Ashanti" },
+      { "trait_type": "Tag", "value": "kente" },
+      { "trait_type": "Tag", "value": "traditional" },
+      { "trait_type": "Tag", "value": "handwoven" },
+      { "trait_type": "Tag", "value": "asante" },
+      { "trait_type": "Tag", "value": "authentic" }
+    ]
+  },
+  {
+    "name": "Adinkra Symbol Jewelry Set",
+    "description": "Handcrafted gold-plated jewelry featuring traditional Adinkra symbols. Each piece represents deep philosophical concepts and African wisdom.",
+    "image": "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=800&h=600&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/2",
+    "price_amount": "0.15",
+    "price_currency": "",
+    "supply": "10",
+    "attributes": [
+      { "trait_type": "Category", "value": "jewelry" },
+      { "trait_type": "Subcategory", "value": "traditional" },
+      { "trait_type": "Creator", "value": "Ama Osei" },
+      { "trait_type": "Creator ENS", "value": "ama.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Greater Accra" },
+      { "trait_type": "Tag", "value": "adinkra" },
+      { "trait_type": "Tag", "value": "jewelry" },
+      { "trait_type": "Tag", "value": "gold" },
+      { "trait_type": "Tag", "value": "symbols" },
+      { "trait_type": "Tag", "value": "handcrafted" }
+    ]
+  },
+  {
+    "name": "Wooden Mask - Akan Fertility",
+    "description": "Traditional Akan fertility mask carved from premium African mahogany. Sacred symbol of life, fertility, and prosperity in Akan culture.",
+    "image": "https://images.unsplash.com/photo-1719169395872-3b953620f1ce?q=80&w=767&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/3",
+    "price_amount": "0.35",
+    "price_currency": "",
+    "supply": "2",
+    "attributes": [
+      { "trait_type": "Category", "value": "art" },
+      { "trait_type": "Subcategory", "value": "sculpture" },
+      { "trait_type": "Creator", "value": "Kwame Asante" },
+      { "trait_type": "Creator ENS", "value": "kwame.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Central" },
+      { "trait_type": "Tag", "value": "mask" },
+      { "trait_type": "Tag", "value": "akan" },
+      { "trait_type": "Tag", "value": "fertility" },
+      { "trait_type": "Tag", "value": "sculpture" },
+      { "trait_type": "Tag", "value": "mahogany" }
+    ]
+  },
+  {
+    "name": "Digital Kente Pattern Collection",
+    "description": "Exclusive digital collection of 50 unique Kente patterns with commercial usage rights. Perfect for fashion designers and digital artists.",
+    "image": "https://images.unsplash.com/photo-1571945153237-4929e783af4a?w=800&h=600&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/4",
+    "price_amount": "2500",
+    "price_currency": "",
+    "supply": "1",
+    "attributes": [
+      { "trait_type": "Category", "value": "digital" },
+      { "trait_type": "Subcategory", "value": "patterns" },
+      { "trait_type": "Creator", "value": "Kofi Adjei" },
+      { "trait_type": "Creator ENS", "value": "kofi.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Volta" },
+      { "trait_type": "Tag", "value": "digital" },
+      { "trait_type": "Tag", "value": "patterns" },
+      { "trait_type": "Tag", "value": "kente" },
+      { "trait_type": "Tag", "value": "commercial" },
+      { "trait_type": "Tag", "value": "collection" }
+    ]
+  },
+  {
+    "name": "Shea Butter & African Black Soap Set",
+    "description": "Premium skincare set featuring raw shea butter and traditional African black soap. Sourced directly from women's cooperatives in Northern Ghana.",
+    "image": "https://images.unsplash.com/photo-1573812461383-e5f8b759d12e?q=80&w=1170&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/5",
+    "price_amount": "0.08",
+    "price_currency": "",
+    "supply": "25",
+    "attributes": [
+      { "trait_type": "Category", "value": "beauty" },
+      { "trait_type": "Subcategory", "value": "skincare" },
+      { "trait_type": "Creator", "value": "Efua Nkrumah" },
+      { "trait_type": "Creator ENS", "value": "efua.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Northern" },
+      { "trait_type": "Tag", "value": "shea-butter" },
+      { "trait_type": "Tag", "value": "black-soap" },
+      { "trait_type": "Tag", "value": "skincare" },
+      { "trait_type": "Tag", "value": "natural" },
+      { "trait_type": "Tag", "value": "cooperative" }
+    ]
+  },
+  {
+    "name": "Kente Pattern Design Workshop",
+    "description": "Virtual workshop experience learning traditional Kente weaving patterns from master weavers. Includes materials kit and 3-hour live session.",
+    "image": "https://images.unsplash.com/photo-1596626417050-39c7f6ddd2c9?q=80&w=1169&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/6",
+    "price_amount": "0.12",
+    "price_currency": "",
+    "supply": "8",
+    "attributes": [
+      { "trait_type": "Category", "value": "experiences" },
+      { "trait_type": "Subcategory", "value": "workshops" },
+      { "trait_type": "Creator", "value": "Akosua Mensah" },
+      { "trait_type": "Creator ENS", "value": "akosua.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Ashanti" },
+      { "trait_type": "Tag", "value": "workshop" },
+      { "trait_type": "Tag", "value": "kente" },
+      { "trait_type": "Tag", "value": "weaving" },
+      { "trait_type": "Tag", "value": "virtual" },
+      { "trait_type": "Tag", "value": "learning" }
+    ]
+  },
+  {
+    "name": "Handwoven Basket Collection",
+    "description": "Beautiful collection of traditional African baskets made from sustainable materials. Perfect for home décor and storage.",
+    "image": "https://images.unsplash.com/photo-1544914167-c71759753c6d?q=80&w=1173&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/7",
+    "price_amount": "0.06",
+    "price_currency": "",
+    "supply": "15",
+    "attributes": [
+      { "trait_type": "Category", "value": "crafts" },
+      { "trait_type": "Subcategory", "value": "baskets" },
+      { "trait_type": "Creator", "value": "Yaw Boakye" },
+      { "trait_type": "Creator ENS", "value": "yaw.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Upper East" },
+      { "trait_type": "Tag", "value": "baskets" },
+      { "trait_type": "Tag", "value": "handwoven" },
+      { "trait_type": "Tag", "value": "sustainable" },
+      { "trait_type": "Tag", "value": "home-decor" },
+      { "trait_type": "Tag", "value": "storage" }
+    ]
+  },
+  {
+    "name": "African Print Fabric Bundle",
+    "description": "Premium collection of authentic African print fabrics. Vibrant colors and traditional patterns perfect for fashion and crafts.",
+    "image": "https://images.unsplash.com/photo-1552710307-537199cd41c0?q=80&w=1170&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/8",
+    "price_amount": "0.18",
+    "price_currency": "",
+    "supply": "8",
+    "attributes": [
+      { "trait_type": "Category", "value": "textiles" },
+      { "trait_type": "Subcategory", "value": "fabric" },
+      { "trait_type": "Creator", "value": "Efua Nkrumah" },
+      { "trait_type": "Creator ENS", "value": "efua.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Northern" },
+      { "trait_type": "Tag", "value": "fabric" },
+      { "trait_type": "Tag", "value": "african-print" },
+      { "trait_type": "Tag", "value": "vibrant" },
+      { "trait_type": "Tag", "value": "fashion" },
+      { "trait_type": "Tag", "value": "crafts" }
+    ]
+  },
+  {
+    "name": "Traditional Drumming Workshop",
+    "description": "Learn traditional African drumming techniques in this immersive virtual workshop. Includes practice drum and cultural history.",
+    "image": "https://images.unsplash.com/photo-1523689119443-df96632084a1?q=80&w=1332&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/9",
+    "price_amount": "0.09",
+    "price_currency": "",
+    "supply": "20",
+    "attributes": [
+      { "trait_type": "Category", "value": "experiences" },
+      { "trait_type": "Subcategory", "value": "music" },
+      { "trait_type": "Creator", "value": "Kwabena Osei" },
+      { "trait_type": "Creator ENS", "value": "kwabena.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Volta" },
+      { "trait_type": "Tag", "value": "drumming" },
+      { "trait_type": "Tag", "value": "music" },
+      { "trait_type": "Tag", "value": "workshop" },
+      { "trait_type": "Tag", "value": "cultural" },
+      { "trait_type": "Tag", "value": "virtual" }
+    ]
+  },
+  {
+    "name": "Cocoa Butter Skincare Set",
+    "description": "Pure Ghanaian cocoa butter skincare collection. Nourishing and moisturizing products made from premium cocoa beans.",
+    "image": "https://images.unsplash.com/photo-1707915317424-437561f0e323?q=80&w=1176&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/10",
+    "price_amount": "0.07",
+    "price_currency": "",
+    "supply": "18",
+    "attributes": [
+      { "trait_type": "Category", "value": "beauty" },
+      { "trait_type": "Subcategory", "value": "skincare" },
+      { "trait_type": "Creator", "value": "Adwoa Asante" },
+      { "trait_type": "Creator ENS", "value": "adwoa.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Western" },
+      { "trait_type": "Tag", "value": "cocoa-butter" },
+      { "trait_type": "Tag", "value": "skincare" },
+      { "trait_type": "Tag", "value": "natural" },
+      { "trait_type": "Tag", "value": "moisturizing" },
+      { "trait_type": "Tag", "value": "premium" }
+    ]
+  },
+  {
+    "name": "Bronze Akan Weights Set",
+    "description": "Authentic replica of traditional Akan gold weights used in ancient trade. Each piece represents different proverbs and wisdom.",
+    "image": "https://images.unsplash.com/photo-1736692336566-bc83c4830283?q=80&w=784&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/11",
+    "price_amount": "0.22",
+    "price_currency": "",
+    "supply": "3",
+    "attributes": [
+      { "trait_type": "Category", "value": "art" },
+      { "trait_type": "Subcategory", "value": "artifacts" },
+      { "trait_type": "Creator", "value": "Kwame Asante" },
+      { "trait_type": "Creator ENS", "value": "kwame.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Central" },
+      { "trait_type": "Tag", "value": "bronze" },
+      { "trait_type": "Tag", "value": "akan" },
+      { "trait_type": "Tag", "value": "weights" },
+      { "trait_type": "Tag", "value": "traditional" },
+      { "trait_type": "Tag", "value": "artifacts" }
+    ]
+  },
+  {
+    "name": "Batik Art Workshop Experience",
+    "description": "Master the ancient art of batik in this hands-on virtual workshop. Learn traditional techniques and create your own patterns.",
+    "image": "https://images.unsplash.com/photo-1542775846-e6c1e8aba884?q=80&w=687&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/12",
+    "price_amount": "0.14",
+    "price_currency": "",
+    "supply": "15",
+    "attributes": [
+      { "trait_type": "Category", "value": "experiences" },
+      { "trait_type": "Subcategory", "value": "art" },
+      { "trait_type": "Creator", "value": "Ama Gyasi" },
+      { "trait_type": "Creator ENS", "value": "ama-gyasi.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Greater Accra" },
+      { "trait_type": "Tag", "value": "batik" },
+      { "trait_type": "Tag", "value": "art" },
+      { "trait_type": "Tag", "value": "workshop" },
+      { "trait_type": "Tag", "value": "traditional" },
+      { "trait_type": "Tag", "value": "hands-on" }
+    ]
+  },
+  {
+    "name": "Traditional Footwear",
+    "description": "Handcrafted African footwear worn for centuries across West Africa. Made with durable hide and natural dyes, they blend comfort, heritage, and timeless everyday style.",
+    "image": "https://images.unsplash.com/photo-1734178313867-30531963c136?q=80&w=1170&auto=format&fit=crop",
+    "external_url": "https://sankofa-chain.vercel.app/product/13",
+    "price_amount": "0.16",
+    "price_currency": "",
+    "supply": "12",
+    "attributes": [
+      { "trait_type": "Category", "value": "footwear" },
+      { "trait_type": "Subcategory", "value": "traditional-sandals" },
+      { "trait_type": "Creator", "value": "Kojo Mensah" },
+      { "trait_type": "Creator ENS", "value": "kojo.sankofachain.eth" },
+      { "trait_type": "Location", "value": "Ghana - Northern" },
+      { "trait_type": "Tag", "value": "footwear" },
+      { "trait_type": "Tag", "value": "traditional" },
+      { "trait_type": "Tag", "value": "handcrafted" },
+      { "trait_type": "Tag", "value": "heritage" },
+      { "trait_type": "Tag", "value": "style" }
+    ]
+  }
+]
